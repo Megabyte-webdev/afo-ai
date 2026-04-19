@@ -8,8 +8,8 @@ RUN apt-get update && apt-get install -y libgomp1 wget && rm -rf /var/lib/apt/li
 WORKDIR /app
 COPY --from=builder /app/target/release/afo-ai .
 
-# Download the model during build
-RUN wget -O qwen2.5-0.5b-instruct-q4_k_m.gguf https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf
+RUN wget -O qwen2.5-0.5b-instruct-q4_k_m.gguf \
+    https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf
 
 ENV PORT=8080
 EXPOSE 8080
