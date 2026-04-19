@@ -1,7 +1,7 @@
 [package]
 name = "afo-ai"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
 axum = "0.7"
@@ -12,10 +12,4 @@ tower-http = { version = "0.5", features = ["cors"] }
 anyhow = "1"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
-
-# LLM inference – choose one:
-# Option A: llama-cpp-rs (GGUF models)
 llama-cpp-2 = "0.1"
-
-# Option B: mistral.rs (pure Rust, easier deployment)
-# mistralrs = { version = "0.1", features = ["metal"] }  # metal for macOS, cuda for NVIDIA
